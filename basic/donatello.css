@@ -1,0 +1,65 @@
+/* Wiley Batttles, CIS-3023-01, Lab 1, 1/12/23
+This style is for a basic website layout */
+
+* {
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 95vh;
+    /* 95% ov viewpoint height */
+    background: rgb(0, 112, 30);
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: rgb(0, 112, 30);
+    padding: 2em 0 2em 0;
+}
+
+placeholder {
+    background: rgb(125, 37, 125);
+    padding: 2em 0 2em 0;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.left {
+    background-image: linear-gradient(to right, white, white 50%, black 50%);
+    flex: 1 1 100px;
+}
+
+main {
+    background: rgb(125, 37, 125);
+    flex: 5 5 150px;
+}
+
+.right {
+    background-image: linear-gradient(to left, white, white 50%, black 50%);
+    flex: 1 1 100px;
+}
+
+footer {
+    background: rgb(125, 37, 125);
+    padding: 1em 0 1em 0;
+}
+
+/* Responsive Design: Adjust the layout for smalller screens */
+@media all and (max-width: 550px) {
+    .content {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 5em 0 5em 0;
+    }
+}
