@@ -1,5 +1,5 @@
-/* Wiley Batttles, CIS-3023-01, Lab 1, 1/12/23
-This style is for a basic website layout */
+/* Wiley Batttles, 1/14/23, HW1
+This style is the stylsheet for the basic layout */
 
 * { 
     margin: 5px;
@@ -22,7 +22,7 @@ header {
     padding: 2em 0 2em 0;
 }
 
-placeholder {
+nav {
     background: rgb(125, 37, 125);
     padding: 2em 0 2em 0;
 }
@@ -51,7 +51,7 @@ main {
 }
 
 footer {
-    background: rgb(0, 112, 30);
+    background: rgb(125, 37, 125);
     padding: 1em 0 1em 0;
 }
 

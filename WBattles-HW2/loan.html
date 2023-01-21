@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, 1/14/23, HW1-->
+<!-- This code created a basic website layout design-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="loan.css">
+    <script src="loan.js"></script>
+</head>
+<body>
+    <header>
+        Loan Calculator
+    </header>
+    <div class="content">
+        <main>
+            <form id="form1">
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required autofocus><br>
+
+                <label for="amount">Initial Amount:</label>
+                <input type="text" id="amount" name="amount" required><br>
+
+                <label for="months">Months:</label>
+                <input type="text" id="months" name="months" required><br>
+
+                <label for="rate">Annual Rate:</label>
+                <input type="text" id="rate" name="rate" required><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </main>
+    </div>
+    <div id="answer">
+        Output 
+    </div>
+    <footer>
+    </footer>
+</body>
+</html>
