@@ -51,20 +51,6 @@ input{
     width: 140px;
 }
 
-/*button{
-    display: inline-block;
-    width: 140px;
-    text-align: center;
-}
-button:hover{
-    background-color: rgb(200, 200, 200);
-}
-button:active{
-    background-color: rgb(200, 200, 200);
-}
-
-*/
-
 .input-button{
     display: inline-block;
     width: 140px;

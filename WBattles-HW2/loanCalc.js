@@ -1,3 +1,5 @@
+// Wiley Battles, 1/26/23, HW2
+
 var stringName, floatAmount, intMonths, floatRate, floatPayment
 
 let $ = function(id) {
