@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Wiley Battles, 1/14/23, HW1-->
-<!-- This code created a basic website layout design-->
+<!-- Wiley Battles, 1/26/23, HW2 -->
+<!-- This code created a form to calculate loan payment -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,27 +16,31 @@
     </header>
     <div class="content">
         <main>
+            Please enter your information to calcuate your monthly payment<br>
+            <!-- Form including name, intial loan amount, months for payment, annual rate -->
+            <!-- Output, loan payment per month -->
             <form id="form1">
-
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required autofocus><br>
 
                 <label for="amount">Initial Amount:</label>
-                <input type="text" id="amount" name="amount" required><br>
+                <input type="number" id="amount" name="amount" min="0" required><br>
 
                 <label for="months">Months:</label>
-                <input type="text" id="months" name="months" required><br>
-
+                <input type="number" id="months" name="months" min="0" required><br>
+                
                 <label for="rate">Annual Rate:</label>
-                <input type="text" id="rate" name="rate" required><br>
+                <input type="number" step="0.01" id="rate" name="rate" min="0" max="100" required><br>
 
-                <input type="submit" value="Submit">
+                <button class="input-button" type="submit" value="Calculate">calculate</button>
+                <button class="input-button" type="reset" value="Reset">reset</button><br>
+
+                <label for="answer">Payment:</label>
+                <input type="text" id="answer" name="answer" disabled><br>
             </form>
         </main>
     </div>
-    <div id="answer">
-        Output 
-    </div>
+
     <footer>
     </footer>
 </body>

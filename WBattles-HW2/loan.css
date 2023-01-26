@@ -1,5 +1,4 @@
-/* Wiley Batttles, 1/14/23, HW1
-This style is the stylsheet for the basic layout */
+/* Wiley Battles, 1/26/23, HW2 */
 
 * { 
     margin: 5px;
@@ -9,16 +8,20 @@ This style is the stylsheet for the basic layout */
 body {
     height: 95vh; /* 95% ov viewpoint height */
     background: white;
-    font-family: sans-serif;
+
+    font-family: futura;
     text-align: center;
     color: black;
-    font-size: 15px;
+    font-size: 20px;
+
+
     display: flex;
     flex-direction: column;
 }
 
 header {
-    background: rgb(0, 112, 30);
+    background: rgb(125, 37, 125);
+    color: white;
     padding: 2em 0 2em 0;
 }
 
@@ -38,8 +41,46 @@ main {
     flex: 5 5 150px;
 }
 
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+
+input{
+    width: 140px;
+}
+
+/*button{
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+}
+button:hover{
+    background-color: rgb(200, 200, 200);
+}
+button:active{
+    background-color: rgb(200, 200, 200);
+}
+
+*/
+
+.input-button{
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+}
+.input-button:hover {
+    background: rgb(197, 197, 197);
+}
+
+.input-button:active {
+    background: rgb(197, 197, 197);
+    transform: translateY(1px)
+}
+
 footer {
-    background: white;
+    background: rgb(125, 37, 125);
     padding: 1em 0 1em 0;
 }
 
