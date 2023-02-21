@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLab9-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLab9</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <div id="output2"></div>
+
+    <script>
+        let $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var sentance = prompt("Enter sectance (at least 5 words)");
+        var wordsArray = sentance.split(" ");
+        var string = "";
+        for (let i = 0; i < wordsArray.length; i++) {
+            string += wordsArray[i] + " ";
+            $("output").innerHTML = string;
+        }
+
+        var reverseString = "";
+        for (let i2 = 1; i2 <= wordsArray.length; i2++){
+            reverseString += wordsArray[(wordsArray.length)-i2] + " ";
+            $("output2").innerHTML = reverseString;
+        }
+
+    </script>
+</body>
+
+</html>

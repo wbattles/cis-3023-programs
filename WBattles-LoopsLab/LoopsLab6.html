@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLab6-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLab6</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        let $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var array = [];
+        var i = 0;
+        do {
+            var input = prompt("Enter word");
+            array[i] = input;
+            i++;
+        } while ((input !== "stop") && (input !== "bye") && (input !== "end"));
+        array.pop();
+        $("output").innerHTML = array;
+
+    </script>
+</body>
+
+</html>

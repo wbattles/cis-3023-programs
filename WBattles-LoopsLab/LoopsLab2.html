@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLab2-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLab2</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        const obj = {1:"", 2:"", 3:"", 4:"", 5:""};
+        for (x in obj){
+            obj[x] = prompt("Enter element");
+        }
+        for (x in obj){
+            alert(obj[x]);
+        }
+    </script>
+</body>
+
+</html>

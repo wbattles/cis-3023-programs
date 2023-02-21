@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLabEC-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLabEC</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <div id="output2"></div>
+
+    <script>
+        let $ = function (id) {
+                return document.getElementById(id);
+            }
+
+        var sentance = prompt("Enter sentance");
+        var wordsArray = sentance.split(" ");
+
+        // solution 1
+        var reverseString = "";
+        for (let i = 0; i<wordsArray.length; i++){
+            wordLetters = wordsArray[i].split("");
+            for (let i2 = 1; i2<=wordLetters.length; i2++){
+                reverseString += wordLetters[wordLetters.length - i2];
+            }
+            reverseString += " ";
+        }
+        alert(reverseString);
+
+
+        // solution 2
+        var sentanceArray = [];
+        for(let i = 0; i<wordsArray.length; i++){
+            wordLetters= wordsArray[i].split("");
+            reverseLetters = wordLetters.reverse();
+            reverseWord = reverseLetters.join("");
+            sentanceArray[i] = reverseWord;
+        }
+        alert(sentanceArray.join(" "));
+
+        
+    </script>
+</body>
+
+</html>

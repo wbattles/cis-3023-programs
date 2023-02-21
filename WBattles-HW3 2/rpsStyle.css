@@ -1,0 +1,59 @@
+/* Wiley Batttles, CIS-3023-01, 2/12/23, HW3 */
+
+* {
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+header {
+    background: black;
+    font-family: sans-serif;
+    color: rgb(96, 181, 255);
+    padding: 1em 0 1em 0;
+}
+
+body {
+    height: 95vh;
+    /* 95% ov viewpoint height */
+    background: black;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 100px;
+}
+
+button:hover {
+    background: rgb(147, 205, 255);
+}
+
+button:active {
+    background: rgb(104, 179, 245);
+    transform: translateY(2px)
+}
+
+.image{
+    width: 200px;
+    height: 200px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+/* Responsive Design: Adjust the layout for smalller screens */
+@media all and (max-width: 550px) {
+    .content {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 5em 0 5em 0;
+    }
+}

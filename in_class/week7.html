@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/14/23, Week 6-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+</head>
+
+<body>
+    <script>
+        let wordArray = [];
+        for (let i = 0; i < 5; i++){
+            wordArray[i] =(prompt("Input word " + (i+1))).toLowerCase();
+        }
+        alert(wordArray);
+        
+        wordArray.sort();
+        alert(wordArray);
+
+        wordArray.shift();
+        alert(wordArray);
+
+        addWord = prompt("Input another word");
+        wordArray.push(addWord);
+        alert(wordArray);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLab4-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLab4</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        let $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var array = [];
+        var i = 0;
+        do {
+            input = prompt("Enter word");
+            array[i] = input;
+            i++;
+        } while (input !== "quit")
+        array.pop();
+        for (x of array){
+            $("output").innerHTML = array;
+        }
+
+    </script>
+</body>
+
+</html>

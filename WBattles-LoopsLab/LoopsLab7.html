@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/17/23, LoopsLab7-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopsLab7</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        let $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var input = prompt("Enter a number 1-10");
+        var string = "";
+        for (var i = 1; i<=10; i++){
+            if (i == input){
+                continue;
+            } 
+            string += i + '<br>';
+            $("output").innerHTML = string;
+        }
+
+    </script>
+</body>
+
+</html>

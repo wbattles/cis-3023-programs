@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/12/23, HW3-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <script src="rpsCode.js"></script>
+    <link rel="stylesheet" href="rpsStyle.css">
+</head>
+<header>
+    Can you beat Nebulon in Rock, Paper, Scissors?
+</header>
+<body class="content">
+
+    <div>
+        <div id="player-score">Player: 0</div>
+        <div id="robot-score">Nebulon: 0</div>
+        <h2>
+            <img class="image" src="https://miro.medium.com/max/512/1*Ic_Mg_tvQ5NFt_IFOMG5uA.png">
+            <img id="throwImg" class="image" src="http://www.clker.com/cliparts/O/7/l/y/U/E/gray-handprint-hi.png">
+        </h2>
+    </div>
+
+    <div id="last-play">Start</div>
+
+    <div id="throw">
+        <button onclick="rosham('rock')">Rock</button>
+        <button onclick="rosham('paper')">Paper</button>
+        <button onclick="rosham('scissors')">Scissors</button>
+    </div>
+
+    <div>
+        <button onclick="playAgain()">New Game</button>
+    </div>
+
+</body>
+</html>
