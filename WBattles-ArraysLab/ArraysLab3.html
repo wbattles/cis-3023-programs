@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/23/23, ArraysLab3-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArraysLab3</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        var array = [];
+        i = 0
+        for (;;) {
+            var number = prompt('Input number');
+            array[i] = number
+            i++
+            if (number === "*") {
+                break;
+            }
+        }
+        array.pop()
+
+        function filterFunction(value, index, array) {
+            return value > 10 && value < 45;
+        }
+
+        const range = array.filter(filterFunction)
+        alert(range)
+    </script>
+</body>
+
+</html>

@@ -1,20 +1,21 @@
-// Wiley Battles, CIS-3023-01, 2/24/23, HW4
+// Wiley Battles, CIS-3023-01, 2/25/23, HW4
 
 let $ = function (id) {
     return document.getElementById(id);
 }
 
-var evalString = function () {
+var prepString = function () {
     // create array of words, count
     arrayWords = (($("input").value).toLowerCase()).split(" ")
-    alert(arrayWords)
-    wordCount = (arrayWords.length)
-    alert(wordCount)
+    countWords = (arrayWords.length)
     
     // turn into string
     strChar = arrayWords.join("")
-    alert(strChar)
 
+    evalString(strChar)
+}
+
+var evalString = function (strChar) {
     let vowels = ["a", "e", "i", "o", "u"]
     let punct = [":", "!", ",", ".", "?", "-", "(", ")", "$"]
 
@@ -23,20 +24,24 @@ var evalString = function () {
     var countConst = 0
 
     for (let x in strChar) {
-        switch (x) {
-            case vowels.includes(x):
-                countVowels++
-            case punct.includes(x):
-                countPunct++
-            default:
-                countConst++
+        char = strChar[x]
+        if (vowels.includes(char)) {
+            countVowels++
+        } else if (punct.includes(char)) {
+            countPunct++
+        } else {
+            countConst++
         }
     }
-    //alert(wordCount, countVowels, countPunct, countConst)
+
+    $("output").value =
+    "Word Count: " + countWords + "\n" +
+    "Vowel Count: " + countVowels + "\n" +
+    "Punctuation Count: " + countPunct + "\n" +
+    "Consonant Count: " + countConst
 
 }
 
-
 window.onload = function () {
-    $("eval").onclick = evalString;
+    $("eval").onclick = prepString;
 }

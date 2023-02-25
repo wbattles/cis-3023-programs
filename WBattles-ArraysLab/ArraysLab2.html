@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/23/23, ArraysLab2-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArraysLab2</title>
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        var array = [];
+        for (let i = 0; i < 5; i++) {
+            array[i] = prompt('Input number');
+        }
+
+        alert(Math.max.apply(null, array))
+        alert(Math.min.apply(null, array))
+    </script>
+</body>
+
+</html>
