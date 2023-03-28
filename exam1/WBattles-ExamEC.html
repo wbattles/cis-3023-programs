@@ -1,0 +1,82 @@
+<!-- Wiley Battles, CIS-3023-01, 3/2/23, Exam 1-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 1</title>
+</head>
+
+<body>
+    <script>
+        var array = [];
+        i = 0
+        for (; ;) {
+            var number = prompt('Input number');
+            array[i] = number
+            i++
+            if (isNaN(number)) {
+                array.pop()
+                i--
+                check = prompt("Do you want to exit? Press * to confirm")
+                if (check == "*") {
+                    break;
+                }
+            }
+        }
+
+        sortArray = array.sort(function (a, b) { return a - b })
+        alert(sortArray)
+
+        do {
+            oper = prompt("Enter + or -")
+            if (oper !== "+" && oper !== "-") {
+                alert("Please try again")
+                continue;
+            } else {
+                continue;
+            }
+        } while (oper !== "+" && oper !== "-")
+
+        ascArray = array.sort(function (a, b) { return b - a })
+        alert(ascArray)
+
+
+        if (oper == "+") {
+                var total = 0
+                for (x of sortArray) {
+                    total += parseFloat(x)
+                }
+                alert(total)
+            } else {
+                var first = parseFloat(sortArray[0])
+                array.shift()
+
+                sub = 0
+                for (let i = 0; i < sortArray.length; i++) {
+                    sub = sub + parseFloat(sortArray[i])
+                }
+                alert(first - sub)
+            }
+
+
+        str = ""
+        if (oper == "+") {
+                for (let i = 1; i<ascArray.length; i++) {
+                    str += "+" + ascArray[i]
+                }
+                alert(str + "=" + total)
+        } else {
+            for (let i = 1; i < ascArray.length; i++) {
+                str += "-" + ascArray[i]
+            }
+            alert(str + "=" + (first - sub))
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/27/23, Objects Lab 5-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Lab 5</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(fName, bYear, code) {
+                this.name = fName
+                this.bYear = bYear
+                this.code = code
+            }
+            age(){
+                const d = new Date()
+                let year = d.getFullYear()
+                return (year - this.bYear)
+            }
+
+            talk() {
+                return "Employee " + this.code + ": " + this.name + " is " + this.age() + " years old."
+            }
+        }
+
+        var employees = new Map()
+ 
+        for(;;){
+            var dudeCode = prompt('employee number')
+            if (dudeCode == '0') {
+                alert("you done")
+                break
+            }
+            var dudeName = prompt("first name")
+            var dudeYear = parseInt(prompt("birth year"))
+
+            newDude = new Person(dudeName, dudeYear, dudeCode)
+            employees.set(dudeCode, newDude)
+        }
+
+        employeeID = (prompt("which employee? (enter id)"))
+        if (employees.has(employeeID)){
+            dude = employees.get(employeeID)
+            alert(dude.talk())
+        }else{
+            alert("Employee number not in records")
+            quit()
+        }
+
+        // map.set(key, object(which will be the person))
+    </script>
+</body>
+
+</html>

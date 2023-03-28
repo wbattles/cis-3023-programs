@@ -1,0 +1,38 @@
+!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/21/23, Week 11-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11</title>
+</head>
+
+<body>
+    <script>
+        class stock {
+            constructor(item, quant) {
+                this.item = item
+                this.quant = quant
+            }
+            check(){
+                if(this.quant > 0){
+                    return 'in-stock'
+                }else{
+                    return 'out of stock'
+                }
+            }
+        }
+
+        checkItem = prompt('input item')
+        checkQuant = prompt('input quantity')
+
+        var myItem = new stock(checkItem, checkQuant)
+        alert(myItem.check())
+
+        
+    </script>
+</body>
+
+</html>

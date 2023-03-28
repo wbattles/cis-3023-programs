@@ -1,0 +1,39 @@
+!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/27/23, Objects Lab 2-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Lab 2</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            talk() {
+                return "My name is " + this.name + " and I am " + this.age + " years old."
+            }
+        }
+
+        ls = []
+        for (var i = 0; i < 3; i++){
+            var dudeName = prompt("name")
+            var dudeAge = prompt("age")
+            ls[i] = new Person(dudeName, dudeAge)
+        }
+
+        for(var i2 = 0; i2 < ls.length; i2++){
+            alert(ls[i2].talk())
+        }
+
+
+    </script>
+</body>
+
+</html>

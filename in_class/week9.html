@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 2/14/23, Week 6-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+</head>
+
+<body>
+    <script>
+        byx = new Map()
+
+        for (;;){
+            person = prompt("Enter BYX guy")
+            if (person == "quit") {
+                break;
+            }
+            weight = prompt("Enter their weight")
+            if (weight == "quit"){
+                break;
+            }
+
+            byx.set(person, weight)
+        }
+        person = prompt("Whos weight you wanna know?")
+        alert(byx.get(person))
+
+        alert("You checked the weight of " + person + " on " + (new Date()))
+    </script>
+</body>
+
+</html>

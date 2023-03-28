@@ -1,0 +1,52 @@
+!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/27/23, Objects Lab 4-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Lab 4</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(fName, bYear) {
+                this.name = fName
+                this.bYear = bYear
+            }
+            age(){
+                const d = new Date()
+                let year = d.getFullYear()
+                return (year - this.bYear)
+            }
+
+            talk() {
+                return "My name is " + this.name + " and I am " + this.age() + " years old."
+            }
+        }
+
+        ls = []
+        i = 0
+        for(;;){
+            var dudeName = prompt("first name")
+            if (dudeName == "Stop"){
+                alert("you done")
+                break
+            }
+            var dudeYear = parseInt(prompt("birth year"))
+            ls[i] = new Person(dudeName, dudeYear)
+            i++
+        }
+
+        ls.forEach(peeps)
+
+        function peeps(value) { 
+            alert(value.talk())
+        }
+
+    </script>
+</body>
+
+</html>

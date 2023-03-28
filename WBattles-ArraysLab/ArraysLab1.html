@@ -18,9 +18,9 @@
             array[i] = prompt('Input number');
         }
 
+        array.sort(function (a, b) { return a - b })
         alert(array)
-        array.sort(function (a, b){ return a - b })
-
+        array.sort(function (a, b){ return b - a })
         alert(array)
     </script>
 </body>
