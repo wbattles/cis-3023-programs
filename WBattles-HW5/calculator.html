@@ -1,0 +1,123 @@
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 4/2/23, HW5-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <script>
+        class calculation {
+            constructor(value1, value2, operator, result) {
+                this.value1 = value1
+                this.value2 = value2
+                this.operator = operator
+                this.result = result
+            }
+
+            show(msg){
+                document.getElementById("output").innerHTML = msg;
+            }
+
+            number(value){
+                if (this.value1 == ""){
+                    this.value1 = value
+                    this.show(this.value1)
+                }else{
+                    this.value2 = value
+                    this.show(this.value2)
+                }
+            }
+
+            setOpr(sign){
+                if (this.value1 == ""){
+                    this.result = ""
+                }else{
+                    this.operator = sign
+                    this.show(this.operator)
+                }
+            }
+            
+            calculate(){
+                if (this.operator == "+"){
+                    this.result = this.value1 + this.value2
+                    this.value1 = this.result
+                    this.operator = ""
+
+                } else if (this.operator == "-"){
+                    this.result = this.value1 - this.value2
+                    this.value1 = this.result
+                    this.operator = ""
+
+                } else if (this.operator == "/"){
+                    this.result = this.value1 / this.value2
+                    this.value1 = this.result
+                    this.operator = ""
+
+                } else if (this.operator == "*"){
+                    this.result = this.value1 * this.value2
+                    this.value1 = this.result
+                    this.operator = ""
+                }else{
+                    this.result = this.value1
+                    this.value2 = ""
+                }
+
+                this.show(this.result)
+            }
+
+            clear(){
+                this.value1 = ""
+                this.value2 = ""
+                this.operator = ""
+                this.result = ""
+                this.show("")
+            }
+
+        }
+
+        const current = new calculation("", "", "", "")
+
+    </script>
+
+<div class="calculator">
+    TI-3000
+    Wiley Instruments
+<div class="display">
+    <textarea id="output" disabled></textarea>
+</div>
+<div class="buttons">
+    <button onclick="current.number(7)">7</button>
+    <button onclick="current.number(8)">8</button>
+    <button onclick="current.number(9)">9</button>
+
+    <button onclick="current.setOpr('+')">+</button>
+
+    <button onclick="current.number(4)">4</button>
+    <button onclick="current.number(5)">5</button>
+    <button onclick="current.number(6)">6</button>
+
+    <button onclick="current.setOpr('-')">-</button>
+
+    <button onclick="current.number(1)">1</button>
+    <button onclick="current.number(2)">2</button>
+    <button onclick="current.number(3)">3</button>
+    
+    <button onclick="current.setOpr('*')">*</button>
+
+    <button onclick="current.clear()">AC</button>
+    <button onclick="current.number(0)">0</button>
+    <button onclick="current.calculate()">=</button>
+
+    <button onclick="current.setOpr('/')">/</button>
+
+</div>
+</div>
+
+</body>
+
+</html>

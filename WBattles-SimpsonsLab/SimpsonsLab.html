@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/30/23, Simpsons Lab-->
+<!-- Simpsons Lab - Demonstrate use of objects and HTML DOM Manipulation.
+Audio can be found at https://www.wavsource.com/tv/simpsons.htm -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpsonsLab</title>
+
+    <script>
+      // Declare the class that will be used to create the Simpson family members
+      class person {
+        constructor(name, phrase, normalImg, madImg, voice, id) {
+          this.name = name;
+          this.phrase = phrase;
+          this.normalImg = "images/" + normalImg;
+          this.madImg = "images/" + madImg;
+          this.voice = "audio/" + voice;
+          this.id = id;
+        }
+           
+        isNormal() {
+          document.getElementById(this.id).src = this.normalImg;
+             
+        }
+        isMad() {
+          document.getElementById(this.id).src = this.madImg;
+        }
+
+        cPhrase() {
+          document.getElementById("phrases").innerHTML = this.name + ": " + this.phrase;
+        }
+
+        audio() {
+          document.getElementById("myAudio").src = this.voice;
+          document.getElementById("myAudio").play();
+        }
+
+      }
+
+      //Create the Simpson Family (objects)
+      const Homer = new person("Homer", "Dooohhh!!!", "homer-normal.jpg", "homer-mad.jpg", "homer.wav", "homer-img");
+      const Marge = new person("Marge", "I don't think that's a very good idea.", "marge-normal.jpg", "marge-mad.jpg", "", "marge-img");
+      const Bart = new person("Bart", "Eat my shorts!!!", "bart-normal.jpg", "bart-mad.jpg", "bart.wav", "bart-img");
+      const Lisa = new person("Lisa", "Quit it, Bart!", "lisa-normal.jpg", "lisa-mad.jpg", "", "lisa-img");
+      const Maggie = new person("Maggie", "*pacifier noises*", "maggie-normal.jpg", "maggie-mad.jpg", "", "maggie-img");
+
+
+
+    function madAtBart() {
+      Bart.audio();
+      Homer.isMad();
+      Marge.isMad();
+      Bart.isMad();
+      Lisa.isMad();
+      Maggie.isMad();
+    }
+
+    
+      //Make the family normal (images) to start with
+      window.onload = function() { 
+        Homer.isNormal();
+        Marge.isNormal();
+        Bart.isNormal();
+        Lisa.isNormal();
+        Maggie.isNormal();
+      }
+              
+    </script> 
+</head>
+<body>
+    <!-- Placeholder for audio -->
+    <audio id="myAudio"></audio> 
+    
+    <header>
+        Simpsons Lab <br><br>
+    </header>
+    
+    <!-- Placeholder for Images -->
+    <div id="imagerow">
+        <img id="homer-img" onclick="Homer.cPhrase()" onmousedown="Homer.isMad()" onmouseup="Homer.isNormal()" 
+        ondblclick="Homer.audio()" width="100" height="100" />
+
+        <img id="marge-img" onclick="Marge.cPhrase()" onmousedown="Marge.isMad()" onmouseup="Marge.isNormal()"
+          ondblclick="Marge.audio()" width="100" height="100" />
+
+        <img id="bart-img" onclick="Bart.cPhrase()" onmousedown="Bart.isMad()" onmouseup="Bart.isNormal()"
+          ondblclick="madAtBart()" width="100" height="100" />
+
+        <img id="lisa-img" onclick="Lisa.cPhrase()" onmousedown="Lisa.isMad()" onmouseup="Lisa.isNormal()"
+          ondblclick="Lisa.audio()" width="100" height="100" />
+
+        <img id="maggie-img" onclick="Maggie.cPhrase()" onmousedown="Maggie.isMad()" onmouseup="Maggie.isNormal()"
+          ondblclick="Maggie.audio()" width="100" height="100" />
+       
+    </div>
+
+    <br>
+    <!-- Placeholder for Catch Phrases -->
+    <div id="phrases"></div>
+
+    <footer></footer>
+</body>
+</html>

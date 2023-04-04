@@ -1,0 +1,43 @@
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 3/28/23, Week 12-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 28</title>
+</head>
+
+<body id="body">
+    <div1 id="div1" onmouseover="hide1()" onmouseout="unhide1()">Howdy1</div1>
+    <div2 id="div2" onmouseover="red()" onmouseout="black()">Howdy2</div2>
+    <br>
+    <!-- <div3 id="div3">
+        <button onmouseover="hide1()">Hide 1</button>
+        <button onclick="unhide1()">Unhide 1</button>
+        <button onclick="red()">Red</button>
+        <button onclick="blue()">Blue</button>
+    </div3> -->
+
+    <script>
+        function hide1(){
+            document.getElementById('div1').style.color = 'white'
+        }
+
+        function unhide1() {
+            document.getElementById('div1').style.color = 'black'
+        }
+
+        function red() {
+            document.getElementById('div2').style.color = 'red'
+        }
+
+        function black() {
+            document.getElementById('div2').style.color = 'black'
+        }
+
+        
+    </script>
+</body>
+
+</html>

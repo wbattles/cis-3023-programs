@@ -1,0 +1,53 @@
+/* Wiley Batttles, CIS-3023-01, 4/2/23, HW5 */
+
+textarea {
+    resize: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: right;
+    font-size: 30px;
+    margin-bottom: 10px;
+
+    height: 40px;
+    width: 250px;
+}
+
+
+/* ChatGPT helped organize the structure of the div elements
+https: //chat.openai.com/chat */
+.calculator {
+    width: 250px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #333;
+
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+/* ChatGPT helped get the buttons into rows
+https: //chat.openai.com/chat*/
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+}
+
+button {
+    width: 55px;
+    background: rgb(173, 171, 171);
+    padding: 10px;
+
+    color: #525252;
+}
+
+button:hover {
+    background: rgb(187, 187, 187);
+}
+
+button:active {
+    background: rgb(198, 198, 198);
+    transform: translateY(3px)
+}
