@@ -1,0 +1,40 @@
+
+/* Wiley Battles, CIS-3023-01, 4/16/23, HW6 */
+
+body{
+    background-color: white;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:invalid:required {
+    border: 2px solid red;
+}
+
+header{
+    background-color: rgb(159, 159, 159);
+    text-align: center;
+    font-size:larger;
+    padding: 10px;
+}
+nav {
+    background-color: rgb(98, 98, 98);
+    padding: 10px;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    font-size:smaller;
+    padding-top: 10px;
+}
+
+button{
+    width: 145px;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 4/16/23, HW6-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6</title>
+    <link rel="stylesheet" href="contacts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<script>
+
+
+    class person {
+        constructor(fname, lname, street, city, state, zip, tel, email) {
+            this.fname = fname
+            this.lname = lname
+            this.street = street
+            this.city = city
+            this.state = state
+            this.zip = zip
+            this.tel = tel
+            this.email = email
+
+        }
+    }
+
+    let ls = []
+    function formSubmit() {
+        // ChatGPT gave me the preventDefault() function, becuase the 'return false' was not working
+        // https://chat.openai.com/c/6ed4e50c-3beb-4a76-a2fc-77a30a38ea81
+        event.preventDefault()
+
+        const contact = new person(
+            $('#fname').val(), 
+            $('#lname').val(),
+            $('#street').val(),
+            $('#city').val(),
+            $('#state').val(),
+            $('#zip').val(),
+            $('#tel').val(),
+            $('#email').val())
+        ls.push(contact)
+        display()
+        document.getElementById('fname').focus()
+    }
+
+    function display(){
+        ls.sort((a, b) => a.lname.localeCompare(b.lname));
+        document.getElementById("div1").innerHTML = ""
+
+        for (i2 = 0; i2 < ls.length; i2++) {
+            x = ls[i2]
+            
+            document.getElementById("div1").innerHTML += "<b>" + 
+            x.fname + "\n" +
+            x.lname + "</b>" + "<br>" +
+            x.street + "<br>" +
+            x.city + "\n" +
+            x.state + "\n" +
+            x.zip + "<br>" +
+            x.tel + "<br>" +
+            x.email + "<br><br>"
+        }
+        clear()
+    }
+
+    function clear(){
+        $('#fname').val("")
+        $('#lname').val("")
+        $('#street').val("")
+        $('#city').val("")
+        $('#state').val("")
+        $('#zip').val("")
+        $('#tel').val("")
+        $('#email').val("")
+
+    }
+
+    function formScreen(){
+        document.getElementById("form1").hidden = false
+        document.getElementById("div1").hidden = true
+    }
+    function displayScreen(){
+        document.getElementById("form1").hidden = true
+        document.getElementById("div1").hidden = false
+    }
+
+</script>
+
+<body>
+<header>
+    Contact List <br>
+    Enter the contact below <br>
+    Click 'Form Screen' or 'Display Screen' to navigate
+</header>
+
+<nav id="nav">
+    <button type="button" onclick="formScreen()">Form Screen</button>
+    <button type="button" onclick="displayScreen()">Display Screen</button>
+</nav>
+
+<form id="form1" onsubmit="formSubmit(); return false;">
+    <label for="fname">First Name:</label><br>
+    <input id="fname" type="text" autofocus required><br>
+    <label for="lname">Last Name:</label><br>
+    <input id="lname" type="text" required><br>
+
+    <label for="street">Street Address:</label><br>
+    <input id="street" type="text"><br>
+
+    <label for="city">City:</label><br>
+    <input id="city" type="text"><br>
+
+    <label for="state">State:</label><br>
+    <!-- Chat GPT gave me the regular expression pattern
+    https://chat.openai.com/c/c3e5efb2-1001-4a66-905e-09b8883e4c3f-->
+    <input id="state" type="text" maxlength="2"  pattern="[a-zA-Z]+"><br>
+
+    <label for="zip">Zip Code:</label><br>
+    <input id="zip" type="number" maxlength="5"><br>
+
+    <label for="tel">Telephone:</label><br>
+    <input id="tel" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+
+    <label for="email">Email:</label><br>
+    <input id="email" type="email" required><br>
+
+    <br>
+    <button type="submit" value="Submit">Submit Contact</button>
+</form>
+
+    <div1 hidden id="div1">
+    </div1>
+
+</body>
+
+</html>

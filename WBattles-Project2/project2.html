@@ -1,0 +1,188 @@
+<!-- Wiley Battles, CIS-3023-01, Project, 4/22/23 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="project2.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="admin-container" id="admin">
+        <h2>Admin</h2>
+        <button onclick="empView()">Sign Out</button>
+        <button onclick="displayAdd()">Add Item</button>
+        <button onclick="displayDel()">Delete Item</button>
+        <button onclick="displayOrder()">Order Item</button>
+    </div>
+    <div class="employee-container" id="employee">
+        <h2>Employee</h2>
+        <button onclick="adminLogin()">Admin</button>
+        <button onclick="displayTake()">Remove Item</button>
+    </div>
+
+
+    <form id="adminLogin" onsubmit="adminCheck(event)" hidden>
+        <label for="adminName">Username:</label><br>
+        <input type="text" id="adminName" name="adminName"><br><br>
+
+        <label for="adminPass">Password:</label><br>
+        <input type="password" id="adminPass" name="adminPass"><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+
+    <form id="adminAdd" onsubmit="addItem(event)" hidden>
+        <label for="itemCode">Item Code:</label><br>
+        <input type="text" id="itemCode" name="itemCode"><br><br>
+    
+        <label for="itemName">Item Name:</label><br>
+        <input type="text" id="itemName" name="itemName"><br><br>
+    
+        <label for="itemDesc">Item Description:</label><br>
+        <input type="text" id="itemDesc" name="itemDesc"><br><br>
+    
+        <label for="itemQuant">Item Quantity:</label><br>
+        <input type="number" id="itemQuant" name="itemQuant"><br><br>
+    
+        <label for="itemVendor">Item Vendor:</label><br>
+        <input type="text" id="itemVendor" name="itemVendor"><br><br>
+    
+        <label for="itemMin">Order Minimum:</label><br>
+        <input type="number" id="itemMin" name="itemMin"><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+    
+    <form id="adminDelete" onsubmit="deleteItem(event)" hidden>
+        <label for="itemDelete">Item Code:</label><br>
+        <input type="text" id="itemDelete" name="itemDelete"><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+    
+    <form id="adminOrder" onsubmit="orderItem(event)" hidden>
+        <label for="itemRe">Item Code:</label><br>
+        <input type="text" id="itemRe" name="itemRe"><br><br>
+        
+        <label for="orderAmount">Amount:</label><br>
+        <input type="text" id="orderAmount" name="orderAmount"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <form id="empTake" onsubmit="takeItem(event)">
+        <label for="itemTake">Item Code:</label><br>
+        <input type="text" id="itemTake" name="itemTake"><br><br>
+    
+        <label for="takeAmount">Amount:</label><br>
+        <input type="text" id="takeAmount" name="takeAmount"><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+    
+
+
+<div class="table-container">
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Item Code</th>
+                <th>Item Name</th>
+                <th>Item Description</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+            <tr id="ap440">
+                <td>ap440</td>
+                <td>Cowboy Hat</td>
+                <td>Apparel</td>
+                <td>80</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="ap329">
+                <td>ap329</td>
+                <td>Chaps</td>
+                <td>Apparel</td>
+                <td>30</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="su487">
+                <td>su487</td>
+                <td>Rope</td>
+                <td>Supplies</td>
+                <td>10</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="ap555">
+                <td>ap555</td>
+                <td>Bolo Tie</td>
+                <td>Apparel</td>
+                <td>100</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="ap180">
+                <td>ap180</td>
+                <td>Jeans</td>
+                <td>Apparal</td>
+                <td>200</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="tt180">
+                <td>tt180</td>
+                <td>Spurs</td>
+                <td>Supplies</td>
+                <td>20</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="fw912">
+                <td>fw912</td>
+                <td>Ariat Boots</td>
+                <td>Footwear</td>
+                <td>90</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="fw447">
+                <td>fw447</td>
+                <td>Justin Boots</td>
+                <td>Footwear</td>
+                <td>120</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="fw600">
+                <td>fw600</td>
+                <td>Store Brand Boots</td>
+                <td>Footwear</td>
+                <td>150</td>
+                <td>Inventory Good</td>
+            </tr>
+            
+            <tr id="fw452">
+                <td>fw452</td>
+                <td>Tecova Boots</td>
+                <td>Footwear</td>
+                <td>50</td>
+                <td>Inventory Good</td>
+            </tr>
+
+        </thead>
+
+    </table>
+</div>
+    </div>
+</body>
+
+</html>

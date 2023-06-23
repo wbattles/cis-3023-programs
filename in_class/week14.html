@@ -1,0 +1,34 @@
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 4/11/23, Week 14-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 14</title>
+</head>
+
+<body>
+
+    <div>
+        <p id=“title”></p>
+        <img id=“photo” src=“”></img>
+    </div>
+
+    <script>
+    let myAPI = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+
+    fetch(myAPI)
+        .then(response => response.json())
+        .then(data => display(data))
+        .catch(error => console.log("Error!"));
+
+    function display(data){
+        document.getElementById("title").innerHTML = data.title;
+        document.getElementById("photo").src = data.hdurl;
+    }
+
+    </script>
+</body>
+
+</html>

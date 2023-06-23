@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 4/7/23, HW6Prep5-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6Prep5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<style>
+    input:valid{
+        border: 2px solid green;
+    }
+    input:invalid{
+        border: 2px solid red;
+    }
+    input:invalid:required{
+        border: 2px solid red;
+    }
+</style>
+<script>
+    function formSubmit(){
+        alert($('#email').val() + "\n" + $('#tel').val() + "\n" + $('#age').val())
+        $('#email').val() =""
+        $('#tel').val() =""
+        $('#age').val() =""
+        $('#age').val() = ""
+        $('#email').focus()
+    }
+
+    class person {
+        constructor(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        display(){
+            return (this.name + ": " + this.age)
+        }
+    }
+
+    const fred = new person("Fred", 10)
+    const john = new person("John", 30)
+    const dax = new person("Dax", 25)
+    const jeff = new person("Jeff", 83)
+    const tim = new person("Tim", 2)
+
+
+    myList = [fred, john, dax, jeff, tim]
+    myList.sort((a, b) => (a.age - b.age))
+
+    for (obj of myList){
+        alert(obj.display())
+    }
+
+    function myStrSort(a,b){
+        const nameA = (a.name).toLowerCase()
+        const nameB = (b.name).toLowerCase()
+        if (nameA < nameB){
+            return -1
+        }
+        if (nameA > nameB){
+            return 1
+        }
+        return 0
+    }
+    myList.sort(myStrSort)
+
+    for (obj of myList) {
+        alert(obj.display())
+    }
+
+
+</script>
+
+
+<header>
+    <button type="button" onclick="$('#div1').hide();$('#div2').show()">Show div2, hide div1</button>
+    <button type="button" onclick="$('#div2').hide();$('#div1').show()">Show div1, hide div2</button>
+
+    <form id="form1" onsubmit="formSubmit();return false;">
+        <label for="email">Email:</label><br>
+        <input id="email" type="email"><br>
+    
+        <label for="tel">Telephone:</label><br>
+        <input id="tel" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+
+        <label for="age">Age:</label><br>
+        <input id="age" type="number" min="0" max="120" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</header>
+
+<body>
+
+    <div1 id="div1">
+        This is div1
+    </div1>
+    <br>
+
+    <div2 id="div2">
+        This is div2
+    </div2>
+</body>
+
+</html>

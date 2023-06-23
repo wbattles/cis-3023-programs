@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Wiley Battles, CIS-3023-01, 4/7/23, HW6Prep2-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6Prep2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<script>
+    function formSubmit() {
+        alert("Succes!")
+    }
+</script>
+
+
+<header>
+    <button type="button" onclick="$('#div1').hide();$('#div2').show()">Show div2, hide div1</button>
+    <button type="button" onclick="$('#div2').hide();$('#div1').show()">Show div1, hide div2</button>
+
+    <form id="form1" onsubmit="formSubmit();return;false;">
+        <label for="email">Email:</label><br>
+        <input id="email" type="email"><br>
+
+        <label for="tel">Telephone:</label><br>
+        <input id="tel" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+
+        <label for="age">Age:</label><br>
+        <input id="age" type="number" min="0" max="120" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</header>
+
+<body>
+
+    <div1 id="div1">
+        This is div1
+    </div1>
+    <br>
+
+    <div2 id="div2">
+        This is div2
+    </div2>
+</body>
+
+</html>
